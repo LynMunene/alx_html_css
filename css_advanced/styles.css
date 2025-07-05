@@ -6,10 +6,13 @@
 }
 
 body{
-  background: #010911;
+  background: #071629;
 }
 header {
   position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
   background-color: transparent;
   width: 1103.41px;
   height: 29.46px;
@@ -158,4 +161,215 @@ h2 {
   color: #ffffff;
   line-height: 24px;
   letter-spacing: 0px;
+}
+.testimonials{
+  display: flex;
+  flex-direction: row;
+  gap:20px;
+  align-items: center;
+  background: #c271ff;
+  color: white;
+  margin-bottom: 0%;
+}
+.testimonials img{
+  margin-left: 150px;
+  align-items: start;
+}
+.additional-info{
+  display: flex;
+  flex-direction: column;
+  margin-top:30px;
+  text-align: start;
+  margin-left: 20px;
+ 
+}
+.testimonials h3{
+  text-align: start;
+  margin-top: 30px;
+}
+.testimonials p{
+  margin-top: 10px;
+}
+.tutorials{
+  background: none;
+  background-color: aliceblue;
+  text-align: center;
+}
+.tutorials h2{
+  margin-bottom: 60px;
+  color: black;
+}
+.grid{
+  display: grid;
+  grid-template-columns: repeat(4,300px);
+  align-items: center;
+  justify-content: space-evenly;
+  gap:20px;
+
+}
+.container{
+  display: inline-block;
+  position: relative;
+  min-height: 800px;
+}
+.main-image{
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+.play{
+  position: absolute;
+  align-items: center;
+  top:10%;
+  left: 50%;
+  width: 70px;
+  height: 70px;
+  transform: translate(-50%,-50%);
+  cursor: pointer;
+}
+.grid h3{
+  text-align: start;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  color: #071629;
+  font-size: 16px;
+}
+.grid p{
+  color: #07162980;
+  font-size: 14px;
+  text-align: start;
+  line-height: 24px;
+}
+.profile-pic{
+  width: 30px;
+  height: 30px;
+  display: block;
+}
+.grid h4{
+  font-size: 14px;
+  color: #C271FF;
+  text-align: center;
+  margin-top:-20px;
+  margin-left: -120px;
+}
+.rating {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  color: #C271FF;
+  margin-top: 20px;
+}
+.rating span{
+  color: #D8D8D8;
+}
+.rating p{
+  text-align: right;
+  margin-left: 50px;
+}
+.membership{
+  display: block;
+  align-items: center;
+  background: none;
+  background-color: #071629;
+}
+.membership span {
+  color: #C271FF;
+  font-size: 32px;
+  font-weight: 300px;
+}
+.items{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 40px;
+  margin-top: 20px;
+  color: #D8D8D8;
+}
+.membership img{
+  color: #C271FF;
+  font-family: 40px;
+  padding: 20px;
+  margin-left:40px;
+}
+
+.membership h3{
+  font-size: 18px;
+  line-height: 26px;
+ margin-left: 20px;
+}
+.membership p {
+  font-size: 14px;
+  line-height: 26px;
+  text-align: justify;
+  max-width:200px;
+}
+.membership  button{
+  background-color: #C271FF;
+  text-align: center;
+  margin-left: 45%;
+  margin-top: 100px;
+  margin-bottom: 0px;
+  font-size: 14px;
+  color: #ffffff;
+  padding: 20px;
+  border-radius: 40px;
+}
+.faq{
+  display: block;
+  align-items: center;
+  background: none;
+  background-color: #D8D8D8;
+}
+.faq h2{
+  font-size: 60px;
+  font-weight: 300;
+  color: #071629;
+}
+.faq-content{
+  display: grid;
+  grid-template-columns: repeat(2, 2fr);
+  column-gap: 40px;
+  margin: 40px;
+  font-size: 14px;
+  word-wrap: normal;
+  font-weight: 400;
+
+}
+.faq-content h3{
+  margin-top: 40px;
+  margin-bottom: 20px;
+  font-size: 16px;
+  font-weight: 700;
+}
+footer{
+  display: flex;
+  flex-direction:row;
+  margin: 20px 20px;
+  padding: 40px;
+}
+footer p{
+  position: absolute;
+  color: #D8D8D8;
+  margin-left: 600px;
+  font-size: 12px;
+  font-weight: 400px;
+  min-height: auto;
+}
+footer .icons{
+  display: flex;
+  flex-direction: row;
+  justify-content: right;
+  position: absolute;
+  margin-left: 80%;
+max-height: 80px;
+}
+
+footer .fa-brands{
+  font-size: 20px;
+  color: #D8D8D8;
+  padding: 10px;
+
+
 }
