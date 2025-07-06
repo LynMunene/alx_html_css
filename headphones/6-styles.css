@@ -1,0 +1,904 @@
+  /* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Helvetica Neue', sans-serif;
+    color: #fff;
+    height: 100%;
+
+  }
+  
+  header {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+    padding: 30px 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 2;
+  }
+  
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: bold;
+    font-size: 5rem;
+    color: #fff;
+  }
+  
+  .logo img {
+    max-width: 150px;
+  }
+  
+  nav a {
+    color: #fff;
+    margin-left: 30px;
+    text-decoration: none;
+    font-size: 0.9rem;
+  }
+  nav a:hover{
+    color:  #FF6565;
+  }
+  nav a:active{
+    color:  #FF6565;
+  }
+  
+  .about {
+    position: relative;
+    background: url('images/headphones_hero_1.jpg') no-repeat center center/cover;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0 20px;
+  }
+  
+  .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(79, 82, 115, 0.3), rgba(29, 34, 41, 0.9));
+    z-index: 1;
+  }
+  
+  .about-content {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+  }
+  
+  .about-content h1 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-top: 140px;
+    margin-bottom: 10px;
+  }
+  
+  .about-content h2 {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 25px;
+  }
+  
+  .about-content button {
+    background-color: #ff5c71;
+    color: white;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: bold;
+    margin-top: 20px;
+    margin-bottom: 40px;
+  }
+  .about-content :hover {
+    opacity: 0.9;
+  }
+  .about-content:active{
+    opacity: 0.9;
+  }
+
+
+  .about-content p {
+    font-size: 0.9rem;
+    color: #ccc;
+    line-height: 1.6;
+    max-width: 500px;
+    text-align: center;
+  }
+
+  /* --- Hamburger Menu & Mobile Navigation Specific Styles --- */
+
+.menu-toggle {
+  display: none;
+}
+
+/* Hamburger Icon Styling (hidden on desktop by default) */
+.hamburger-icon {
+  display: none; /* Hide by default on desktop */
+  flex-direction: column;
+  justify-content: space-around;
+  width: 30px; /* Width of the hamburger icon */
+  height: 25px; /* Height of the hamburger icon */
+  cursor: pointer;
+  z-index: 102; /* Ensure it's clickable and on top of other elements */
+  position: relative; /* For potential future animation */
+}
+
+.hamburger-icon .bar {
+  display: block;
+  width: 100%;
+  height: 3px;
+  background-color: #fff; /* Color of the bars */
+  border-radius: 5px;
+  transition: all 0.3s ease-in-out; /* Smooth transition for animation */
+}
+
+/* Mobile Nav Specific Styles (applies when screen is smaller) */
+@media (max-width: 768px) { 
+  header {
+      padding: 15px 20px; /* Slightly less padding for mobile headers */
+  }
+
+  /* Show hamburger icon on mobile */
+  .hamburger-icon {
+      display: flex; /* Show the hamburger menu icon */
+  }
+
+  /* Hide desktop navigation on mobile */
+  nav {
+      display: none; /* Hidden by default on mobile */
+      flex-direction: column; /* Stack links vertically */
+      position: absolute; /* Position relative to header */
+      top: 100%; /* Position below the header */
+      left: 0;
+      width: 100%; /* Full width mobile menu */
+      background-color: transparent; /* Darker background for the dropdown menu */
+      box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+      z-index: 99; /* Ensure it's below logo/hamburger, but above page content */
+      opacity: 0.9;
+  }
+
+ nav {
+      flex-direction: column; /* Ensure links stack vertically */
+      text-align: center; /* Center text within mobile links */
+      gap: 0; /* Remove gap between stacked links */
+      padding: 10px 0; /* Padding for the entire list */
+  }
+
+ nav li {
+      padding: 12px 0; /* Vertical padding for each link item */
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* Subtle separator */
+  }
+
+ nav li:last-child {
+      border-bottom: none; /* No border on the last item */
+  }
+
+ nav a {
+      font-size: 16px; /* Slightly smaller font for mobile links */
+      padding: 5px; /* Adjust padding as needed for clickable area */
+      display: block; /* Make the entire area clickable */
+  }
+
+ 
+  .menu-toggle:checked ~ nav { /* Changed from + to ~ (general sibling) for more robustness */
+      display: flex; /* Show the mobile navigation */
+  }
+
+}
+
+
+.what-we-do {
+  padding: 60px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.intro-text {
+  max-width: 800px;
+  margin-bottom: 60px;
+}
+
+.intro-text p {
+  line-height: 1.6;
+  color: #333;
+  font-size: 15px;
+}
+
+.features {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 40px;
+  max-width: 1000px;
+  width: 100%;
+}
+
+.feature-item {
+  width: 200px;
+  text-align: center;
+}
+
+.feature-item img {
+  height: 50px;
+  margin-bottom: 20px;
+}
+
+.feature-item h2 {
+  font-size: 16px;
+  margin-bottom: 10px;
+  color: #1d1d1f;
+}
+
+.feature-item p {
+  font-size: 13px;
+  color: #555;
+  line-height: 1.4;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+  .features {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .feature-item {
+    width: 100%;
+    max-width: 300px;
+  }
+}
+
+  
+  .dark {
+    position: relative;
+    background: url('images/headphones_hero_2.jpg') no-repeat center center/cover;
+    padding: 100px 20px;
+    text-align: center;
+    color: white;
+  }
+  
+  .dark::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(10, 25, 47, 0.85); /* Dark overlay */
+    z-index: 0;
+  }
+  
+  .overlay-image {
+    position: relative;
+    z-index: 1;
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+  
+  .dark h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+  }
+  
+  .dark p {
+    font-size: 15px;
+    line-height: 1.6;
+    max-width: 800px;
+    margin: 0 auto 50px;
+  }
+  
+  .grid {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 40px;
+  }
+  
+  .stat-box {
+    position: relative;
+    width: 140px;
+    height: 160px;
+  }
+  
+  .main-image {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+  
+  .text-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    text-align: center;
+  }
+  
+  .text-overlay h1 {
+    padding-top: 30px;
+    font-size: 26px;
+    margin: 0;
+    font-weight: bold;
+  }
+  
+  .text-overlay p {
+    font-size: 12px;
+    margin-top: 5px;
+  }
+  
+  /* Responsive */
+  @media (max-width: 768px) {
+    .grid {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .stat-box {
+      margin-bottom: 20px;
+    }
+  }
+  /* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Helvetica Neue', sans-serif;
+    color: #fff;
+    height: 100%;
+
+  }
+  
+  header {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+    padding: 30px 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 2;
+  }
+  
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: bold;
+    font-size: 5rem;
+    color: #fff;
+  }
+  
+  .logo img {
+    max-width: 150px;
+  }
+  
+  nav a {
+    color: #fff;
+    margin-left: 30px;
+    text-decoration: none;
+    font-size: 0.9rem;
+  }
+  nav a:hover{
+    color:  #FF6565;
+  }
+  nav a:active{
+    color:  #FF6565;
+  }
+  
+  .about {
+    position: relative;
+    background: url('images/headphones_hero_1.jpg') no-repeat center center/cover;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0 20px;
+  }
+  
+  .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(79, 82, 115, 0.3), rgba(29, 34, 41, 0.9));
+    z-index: 1;
+  }
+  
+  .about-content {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+  }
+  
+  .about-content h1 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-top: 140px;
+    margin-bottom: 10px;
+  }
+  
+  .about-content h2 {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 25px;
+  }
+  
+  .about-content button {
+    background-color: #ff5c71;
+    color: white;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: bold;
+    margin-top: 20px;
+    margin-bottom: 40px;
+  }
+  .about-content :hover {
+    opacity: 0.9;
+  }
+  .about-content:active{
+    opacity: 0.9;
+  }
+
+
+  .about-content p {
+    font-size: 0.9rem;
+    color: #ccc;
+    line-height: 1.6;
+    max-width: 500px;
+    text-align: center;
+  }
+
+  /* --- Hamburger Menu & Mobile Navigation Specific Styles --- */
+
+.menu-toggle {
+  display: none;
+}
+
+/* Hamburger Icon Styling (hidden on desktop by default) */
+.hamburger-icon {
+  display: none; /* Hide by default on desktop */
+  flex-direction: column;
+  justify-content: space-around;
+  width: 30px; /* Width of the hamburger icon */
+  height: 25px; /* Height of the hamburger icon */
+  cursor: pointer;
+  z-index: 102; /* Ensure it's clickable and on top of other elements */
+  position: relative; /* For potential future animation */
+}
+
+.hamburger-icon .bar {
+  display: block;
+  width: 100%;
+  height: 3px;
+  background-color: #fff; /* Color of the bars */
+  border-radius: 5px;
+  transition: all 0.3s ease-in-out; /* Smooth transition for animation */
+}
+
+/* Mobile Nav Specific Styles (applies when screen is smaller) */
+@media (max-width: 768px) { 
+  header {
+      padding: 15px 20px; /* Slightly less padding for mobile headers */
+  }
+
+  /* Show hamburger icon on mobile */
+  .hamburger-icon {
+      display: flex; /* Show the hamburger menu icon */
+  }
+
+  /* Hide desktop navigation on mobile */
+  nav {
+      display: none; /* Hidden by default on mobile */
+      flex-direction: column; /* Stack links vertically */
+      position: absolute; /* Position relative to header */
+      top: 100%; /* Position below the header */
+      left: 0;
+      width: 100%; /* Full width mobile menu */
+      background-color: transparent; /* Darker background for the dropdown menu */
+      box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+      z-index: 99; /* Ensure it's below logo/hamburger, but above page content */
+      opacity: 0.9;
+  }
+
+ nav {
+      flex-direction: column; /* Ensure links stack vertically */
+      text-align: center; /* Center text within mobile links */
+      gap: 0; /* Remove gap between stacked links */
+      padding: 10px 0; /* Padding for the entire list */
+  }
+
+ nav li {
+      padding: 12px 0; /* Vertical padding for each link item */
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* Subtle separator */
+  }
+
+ nav li:last-child {
+      border-bottom: none; /* No border on the last item */
+  }
+
+ nav a {
+      font-size: 16px; /* Slightly smaller font for mobile links */
+      padding: 5px; /* Adjust padding as needed for clickable area */
+      display: block; /* Make the entire area clickable */
+  }
+
+ 
+  .menu-toggle:checked ~ nav { /* Changed from + to ~ (general sibling) for more robustness */
+      display: flex; /* Show the mobile navigation */
+  }
+
+}
+
+
+.what-we-do {
+  padding: 60px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.intro-text {
+  max-width: 800px;
+  margin-bottom: 60px;
+}
+
+.intro-text p {
+  line-height: 1.6;
+  color: #333;
+  font-size: 15px;
+}
+
+.features {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 40px;
+  max-width: 1000px;
+  width: 100%;
+}
+
+.feature-item {
+  width: 200px;
+  text-align: center;
+}
+
+.feature-item img {
+  height: 50px;
+  margin-bottom: 20px;
+}
+
+.feature-item h2 {
+  font-size: 16px;
+  margin-bottom: 10px;
+  color: #1d1d1f;
+}
+
+.feature-item p {
+  font-size: 13px;
+  color: #555;
+  line-height: 1.4;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+  .features {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .feature-item {
+    width: 100%;
+    max-width: 300px;
+  }
+}
+
+  
+ 
+  /* Responsive */
+  @media (max-width: 768px) {
+    .grid {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .stat-box {
+      margin-bottom: 20px;
+    }
+  }
+  .dark {
+    position: relative;
+    background: url('../images/headphones-bg.jpg') no-repeat center/cover;
+    padding: 100px 20px;
+    color: #fff;
+    text-align: center;
+    overflow: hidden;
+  }
+  
+  .dark::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(10,25,47,0.85);
+    z-index: 0;
+  }
+  
+  .overlay-image {
+    position: relative;
+    z-index: 1;
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+  
+  .dark h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+  
+  .dark p {
+    max-width: 800px;
+    margin: 0 auto 3rem;
+    line-height: 1.6;
+    font-size: 0.95rem;
+  }
+  
+  /* GRID OF STAT BOXES */
+  .grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2.5rem;
+  }
+  
+  .stat-box {
+    /* Just a wrapper to help center the pentagon */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  /* PURE CSS PENTAGON */
+  .pentagon {
+    position: relative;
+    width: 140px;
+    height: 160px;
+    background-color: #ff6b6b;
+    clip-path: polygon(
+      50% 0%,
+      100% 38%,
+      82% 100%,
+      18% 100%,
+      0% 38%
+    );
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+  }
+  
+  .pentagon h1 {
+    margin: 0;
+    font-size: 1.5rem;
+  }
+  
+  .pentagon p {
+    margin: 0.25rem 0 0;
+    font-size: 0.8rem;
+  }
+  
+  /* RESPONSIVE */
+  @media (max-width: 768px) {
+    .grid {
+      flex-direction: column;
+      gap: 2rem;
+    }
+  }
+
+  
+/* --- Call to Action Section (Now with Contact Form) --- */
+.contact-us {
+    display: flex;
+    flex-direction: column; /* Stack its direct children (form container and optional button) vertically */
+    align-items: center;    /* Horizontally center the form container and the button */
+    padding: 50px 20px; /* Adjust padding as needed for the whole section */
+    background-color: #f8f8f8; /* Optional: light background for this section */
+}
+
+.contact-form-container {
+    background-color: #ffffff; /* White background for the form itself */
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    max-width: 500px; /* Limit form width */
+    width: 100%; /* Ensure it takes full width up to max-width */
+    margin-bottom: 30px; /* Space between form and the call-button (if kept) */
+    text-align: center; /* Center the "Contact Us" heading */
+}
+
+.contact-form-container h2 {
+    font-size: 2em;
+    color: #333;
+    margin-top: 0;
+    margin-bottom: 25px;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Space between form groups */
+}
+
+.form-group {
+    text-align: left; /* Align labels and inputs to the left */
+}
+
+.form-group label {
+    display: block; /* Make labels take full width */
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #555;
+    font-size: 0.95em;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1em;
+    box-sizing: border-box; /* Include padding in width */
+    font-family: inherit; /* Inherit font from body */
+}
+
+.form-group textarea {
+    resize: vertical; /* Allow vertical resizing only */
+    min-height: 100px;
+}
+
+/* Style for the form's submit button */
+.submit-button {
+    background-color: #d74625; /* Example: A blue color for submit button */
+    color: white;
+    font-size: 1em;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    align-self: center; /* Center the button if form is a flex column */
+    margin-top: 15px; /* Space above the button */
+}
+
+.submit-button:hover {
+    opacity: 0.9;
+}
+
+
+.call-button {
+    background-color: #FF6565;
+    color: white;
+    font-size: 15px;
+    border: none;
+    border-radius: 30px;
+    padding: 15px 30px;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-weight: bold;
+    margin-top: 20px; 
+}
+
+/* Responsive adjustments for call to action / form section */
+@media (max-width: 768px) {
+    .call-action {
+        padding: 30px 15px;
+    }
+    .contact-form-container {
+        padding: 20px;
+        margin-bottom: 20px;
+    }
+    .contact-form-container h2 {
+        font-size: 1.7em;
+        margin-bottom: 20px;
+    }
+    .form-group label,
+    .form-group input,
+    .form-group textarea {
+        font-size: 0.9em;
+    }
+    .submit-button,
+    .call-button {
+        font-size: 0.95em;
+        padding: 12px 20px;
+    }
+}
+footer {
+    background-color: #051228; /* Dark navy background */
+    padding: 40px 80px;
+    color: #ccc;
+    font-family: 'Arial', sans-serif;
+    border-top: 2px solid #00A3FF; /* Optional bright blue border */
+  }
+  
+  .footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    position: relative;
+  }
+  
+  .footer-left,
+  .footer-right {
+    display: flex;
+    align-items: center;
+  }
+  
+  .footer-logo img {
+    height: 40px;
+  }
+  
+  .footer-right i {
+    margin-left: 16px;
+    background-color: white;
+    border-radius: 50%;
+    padding: 6px;
+    font-size: 20px;
+    color: #051228;
+  }
+  
+  .footer-center {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 10px;
+    font-size: 12px;
+    color: #4a5568; /* faded text for copyright */
+  }
+  @media (max-width: 768px) {
+    .footer {
+      flex-direction: column;
+      text-align: center;
+    }
+  
+    .footer-right {
+      margin-top: 20px;
+    }
+  
+    .footer-center {
+      position: static;
+      transform: none;
+      margin-top: 20px;
+    }
+  }
+  
+  
+
+
